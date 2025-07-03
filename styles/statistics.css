@@ -1,0 +1,62 @@
+.statistics {
+  background: #0578FF;
+  margin-top: 64px;
+}
+.statistics-container.container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 35.5px;
+  padding-bottom: 35.5px;
+}
+.statistics .cell {
+  width: 50%;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.statistics .cell h3 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.statistics .cell p {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .statistics .cell h3 {
+  font-size: 50px;
+}
+.statistics .cell p {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+}
+
+
+  @media only screen and (min-width: 1025px) {
+  .statistics-container.container {
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .statistics .cell {
+    width: 25%; 
+    margin-bottom: 0; 
+  }
+
+  .statistics .cell h3 {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  .statistics .cell p {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Подключение CSS и шрифтов -->
+  <link rel="stylesheet" href="styles/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" 
+  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Главный контейнер для шапки и первых секций -->
+  <div class="three-first-sections">
+
+    <!-- Шапка сайта -->
+    <header class="header">
+      <div class="container">
+        <div class="logo-container">
+          <img src="img/logo.svg" alt="" />
+          <h4>Wonders</h4>
+        </div>
+
+        <!-- Навигация по якорями для ПК -->
+        <nav class="header-nav">
+          <a href="#mobile-app">Mobile App</a>
+          <a href="#faq">FAQs</a>
+          <a href="#contacts">Contact</a>
+          <a href="#sign-up">Sign Up</a>
+        </nav>
+
+        <!-- Кнопка открытия бургер-меню -->
+        <button id="burger-opener" class="header-burger-button">
+          <img id="burger-icon" src="img/burger-open.svg">
+        </button>
+      </div>
+    </header>
+
+    <!-- Выпадающее бургер-меню -->
+    <div id="burger" class="burger burger-closed">
+      <div class="container burger-container">
+        <nav>
+          <ul class="burger-list">
+            <li><a href="#mobile-app" class="burger-link">Mobile</a></li>
+            <li><a href="#faq" class="burger-link">FAQs</a></li>
+            <li><a href="#contact" class="burger-link">Contact</a></li>
+            <li><a href="#sign-up" class="burger-link">Sign Up</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Hero-секция (заголовок, форма, изображение) -->
+    <section class="hero">
+      <div class="container">
+        <h1>Skip the Climbing, Catch the Bus</h1>
+        <p>We sell tickets to the best seats in the house – houses on wheels, that is! Get ready for jaw-dropping views without breaking a sweat.</p>
+
+        <!-- Форма выбора поездки -->
+        <form class="hero-form">
+
+          <!-- Тип поездки и счётчик пассажиров -->
+          <div class="trip-type">
+            <div class="radio-wrapper">
+              <input id="round-trip" type="radio" name="trip-type" value="round-trip" />
+              <label for="round-trip">Round trip</label>
+            </div>
+            <div class="radio-wrapper">
+              <input id="one-way-trip" type="radio" name="trip-type" value="one-way-trip" />
+              <label for="one-way-trip">One way</label>
+            </div>
+            <div class="counter">
+              <img src="img/person-icon.svg" />
+              <button type="button" id="trip-minus">-</button>
+              <span id="trip-counter">1</span>
+              <button type="button" id="trip-plus">+</button>
+            </div>
+          </div>
+
+          <!-- Поля ввода: Откуда и Куда -->
+          <!-- Поля ввода: Откуда и Куда -->
+          <div class="form-group autocomplete">
+            <label for="departure" class="hero-form__label">Departure</label>
+           <input
+             id="departure"
+              class="hero-form__input"
+              placeholder="Your City/Station"
+             oninput="showSuggestions(this, 'departure-suggestions')"
+             onfocus="showSuggestions(this, 'departure-suggestions')"
+             autocomplete="off"
+           />
+           <div id="departure-suggestions" class="suggestions-list"></div>
+          </div>
+
+          <div class="form-group autocomplete">
+            <label for="arrival" class="hero-form__label">Arrival</label>
+            <input
+             id="arrival"
+             class="hero-form__input"
+             placeholder="Where to?"
+              oninput="showSuggestions(this, 'arrival-suggestions')"
+              onfocus="showSuggestions(this, 'arrival-suggestions')"
+              autocomplete="off"
+           />
+           <div id="arrival-suggestions" class="suggestions-list"></div>
+          </div>          
+          <!-- Выбор даты отправления -->
+          <div class="form-group calendar-input-wrapper">
+            <label for="depart-date" class="hero-form__label">Pick your lucky day</label>
+            <div class="input-with-icon">
+              <!-- Кнопка с иконкой календаря -->
+              <button type="button" class="calendar-button" onclick="openCalendar('depart-date')"></button>
+              <!-- Инпут с переключением на тип date при фокусе -->
+              <input id="depart-date" type="text" class="hero-form__input icon-input" placeholder="Depart"
+                onfocus="(this.type='date')" onblur="if(this.value===''){this.type='text'}" />
+            </div>
+          </div>
+
+          <!-- Дата возврата  -->
+          <div class="form-group calendar-input-wrapper">
+            <label for="return-date" class="hero-form__label return-label">&nbsp;</label>
+            <div class="input-with-icon">
+              <button type="button" class="calendar-button" onclick="openCalendar('return-date')"></button>
+              <input id="return-date" type="text" class="hero-form__input icon-input" placeholder="Return"
+                onfocus="(this.type='date')" onblur="if(this.value===''){this.type='text'}" />
+            </div>
+          </div>
+
+          <!-- Кнопка отправки формы -->
+          <button class="submit">Find My Alpine Ride</button>
+        </form>
+      </div>
+
+      <!-- Иллюстрация справа для ПК -->
+      <div class="hero-image">
+        <img src="img/hero.png" alt="Illustration" />
+      </div>
+    </section>
+
+    <!-- Секция статистики -->
+    <section class="statistics">
+      <div class="container statistics-container">
+        <div class="cell"><h3>1.4M+</h3><p>Daily trains</p></div>
+        <div class="cell"><h3>68k+</h3><p>Photos Taken</p></div>
+        <div class="cell"><h3>165+</h3><p>Years of history</p></div>
+        <div class="cell"><h3>23M+</h3><p>Altitude Gained</p></div>
+      </div>
+    </section>
+
+    <!-- Галерея изображений -->
+    <section class="gallery">
+      <div class="container">
+        <h2>Glimpses of Glory</h2>
+        <div class="gallery-wrapper">
+          <!-- Первая и вторая картинки -->
+          <div class="pictures1-2">
+            <div class="gallery_element_1"><img src="img/img02.png"></div>
+            <div class="gallery_element_2"><img src="img/img01.png"></div>
+          </div>
+
+          <!-- Третья, четвёртая и пятая картинки -->
+          <div class="p3-5">
+            <div class="pictures3-4">
+              <div class="gallery_element_3"><img src="img/img03.png"></div>
+              <div class="gallery_element_4"><img src="img/img04.png"></div>
+            </div>
+            <div class="gallery_element_5"><img src="img/img05.png"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Секция ссылок на мобильные приложения -->
+  <section id='mobile-app' class="download-now">
+    <h2>Free downloads app now!</h2>
+    <div class="links-wrapper">
+      <a href="" class="google-play"><img src="img/google-play.png" alt=""></a>
+      <a href="" class="appgallery"><img src="img/appgallery.png" alt=""></a>
+      <a href="" class="appstore"><img src="img/appstore.png" alt=""></a>
+    </div>
+  </section>
+
+  <!-- Часто задаваемые вопросы -->
+  <section id='faq' class="FAQs">
+    <div class="container">
+      <h2>FAQs.</h2>
+      <div id="faq-content" class="faq-content"></div>
+    </div>
+  </section>
+
+  <!-- Секция контактов -->
+  <div class="last-sections">
+    <section class="contact" id="contact">
+      <div class="contact-section">
+        <div class="contact-card">
+          <h2>Contact us</h2>
+          <p class="telephone">+41 98765 43210</p>
+          <p class="mail">hello@peakpasses.eu</p>
+          <p class="address">Alpenblick Strasse 7,<br>12345 Edelweiss Town, Alps</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер сайта -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="logo">
+          <img src="img/white-logo.svg" alt="Wonders logo" />
+          <span>Wonders</span>
+        </div>
+        <div class="footer-columns">
+          <!-- Колонка: About -->
+          <div class="footer-column">
+            <h4>About</h4>
+            <ul>
+              <li><a href="#">How it works</a></li>
+              <li><a href="#">Featured</a></li>
+              <li><a href="#">Partnership</a></li>
+              <li><a href="#">Business Relation</a></li>
+            </ul>
+          </div>
+          <!-- Колонка: Community -->
+          <div class="footer-column">
+            <h4>Community</h4>
+            <ul>
+              <li><a href="#">Events</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Podcast</a></li>
+              <li><a href="#">Invite a friend</a></li>
+            </ul>
+          </div>
+          <!-- Колонка: Socials -->
+          <div class="footer-column">
+            <h4>Socials</h4>
+            <ul>
+              <li><a href="#">Discord</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>English: © 2025 Peak Passages. <br>All Rights Reserved (Especially the Window Seats).</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Подключение JS-скриптов -->
+  <script src="scripts/burger.js"></script>
+  <script src="scripts/faq.js"></script>
+  <script src="scripts/calendar.js"></script>
+  <script src="scripts/counter.js"></script>
+  <script src="scripts/station.js"></script>
+</body>
+</html>

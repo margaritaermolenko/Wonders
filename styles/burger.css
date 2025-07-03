@@ -1,0 +1,53 @@
+.burger {
+  height: 100vh;
+  background-color: #0578FF;
+  position: fixed;
+  top:90px;
+  left: -100%;
+  width: 100%;
+  z-index: 1000;
+  transition: left 0.5s ease-in;
+}
+
+.burger-closed {
+  left: -100%;
+}
+
+.burger-opened {
+  left: 0;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.burger-container.container {
+  padding: 64px 20px ;
+}
+
+.burger-list li{
+  margin-bottom: 64px;
+}
+
+.burger-list{
+  text-decoration: none;
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.burger-link{
+  font-size: 32px;
+  line-height: 27px;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .burger {
+    top:110px
+  }
+  .burger-container.container {
+    padding: 100px 32px;
+  }
+}

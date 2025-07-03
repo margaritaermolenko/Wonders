@@ -1,0 +1,103 @@
+.download-now {
+  padding: 32px 0;
+  background-color: #FFC501;
+}
+.download-now h2 {
+  font-size: 32px;
+  max-width: 290px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.links-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+.links-wrapper a {
+  height: 50px;
+  display: block;
+  margin: auto;
+}
+.links-wrapper a img {
+  height: 50px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .download-now {
+  padding: 128px 121px;
+  }
+
+  .download-now h2 {
+  font-size: 40px;
+  font-weight: 700;
+  max-width: 530px;
+  
+  }
+
+ .links-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.google-play {
+  grid-column: 1 / 3; /* растянуть на две колонки */
+  justify-self: center;
+}
+
+.appgallery {
+  grid-column: 1 / 2;
+  justify-self: end;
+}
+
+.appstore {
+  grid-column: 2 / 3;
+  justify-self: start;
+}
+
+.links-wrapper a img {
+  height: 65px;
+  max-width: 220px;
+}
+
+}
+
+@media only screen and (min-width: 1025px) {
+  .download-now {
+    padding: 128px 0;
+    background-color: #FFC501;
+  }
+
+  .download-now h2 {
+    font-size: 62px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    max-width: 890px;
+  }
+
+  .links-wrapper {
+    display: flex;
+    justify-content: center;       /* Центрируем всё по горизонтали */
+    align-items: center;
+    flex-direction: row;
+    gap: 120px;                     /* Отступы между кнопками */
+    max-width: 870px;              /* Ограничиваем ширину */
+    margin: 0 auto;                /* Центрируем весь блок */
+  }
+
+  .links-wrapper a {
+    display: block;
+  }
+
+  .links-wrapper a img {
+    height: 65px;
+    max-width: 200px;
+    display: block;
+  }
+}

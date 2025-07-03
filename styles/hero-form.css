@@ -1,0 +1,242 @@
+@media screen and (min-width: 576px) and  (max-width: 767px){
+  .hero-form {
+    max-width: 640px;
+  }
+}
+.hero-form__label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 24px;
+}
+.hero-form__input {
+  width: 100%;
+  display: block;
+  height: 53px;
+  border-radius: 10px;
+  padding: 16px 24px;
+  margin-top: 16px;
+  border: 0;
+  outline: none;
+}
+.hero-form .submit {
+  background-color: #0578FF;
+  border-radius: 10px;
+  height: 62px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  border: 0;
+  margin-top: 24px;
+}
+
+.trip-type {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  height: 34px;
+  padding: 3px 8px;
+}
+.trip-type label {
+  font-size: 12px;
+}
+.trip-type input {
+  margin: 0;
+}
+.trip-type .radio-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.trip-type .counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 88px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.trip-type .counter button {
+  background: none;
+  border: 0;
+  font-size: 16px;
+}
+.trip-type .counter button:last-child {
+  color: #0578FF;
+}
+
+.calendar-input-wrapper {
+  position: relative;
+}
+
+.hero-form__input {
+  width: 100%;
+  height: 53px;
+  border-radius: 10px;
+  
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.autocomplete {
+  position: relative;
+}
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  z-index: 10;
+  display: none;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.suggestions-list div {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.suggestions-list div:hover {
+  background-color: #f0f0f0;
+}
+
+
+.icon-input{
+  padding: 16px 24px 16px 52px;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+.calendar-button {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 24px;
+  background-image: url("../img/calendar.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  pointer-events: all;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.return-label{
+  display: none;
+}
+
+ @media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .hero-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+    max-width: 700px;
+  }
+
+  .trip-type {
+    grid-column: span 2;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .calendar-input-wrapper {
+    width: 100%;
+  }
+
+  .calendar-button {
+    transform: translateY(-10%);
+  }
+
+
+  .submit {
+    grid-column: span 2;
+  }
+
+  #return-date{
+    margin-top: 0x;
+  }
+
+  
+  .return-label{
+  display: block;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .hero-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+  column-gap: 32px;
+  max-width: 700px;
+  margin-top: 40px;
+}
+
+.trip-type {
+  grid-column: span 2;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  height: 50px;
+  padding: 8px 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-form__label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.calendar-button {
+    transform: translateY(-10%);
+  }
+
+
+.return-label{
+  display: block;
+}
+
+  .submit {
+    grid-column: span 2;
+  }
+
+}

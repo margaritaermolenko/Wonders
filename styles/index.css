@@ -1,0 +1,39 @@
+@import url(header.css);
+@import url(burger.css);
+@import url(hero-form.css);
+@import url(hero.css);
+@import url(statistics.css);
+@import url(gallery.css);
+@import url(download-now.css);
+@import url(faq.css);
+@import url(contact.css);
+@import url(footer.css);
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+body{
+  display: block;
+}
+
+.container{
+  width: 100%;
+  padding: 0 20px;
+}
+
+.three-first-sections {
+  background: linear-gradient(0deg,rgba(245, 245, 245, 1) 0%, rgba(221, 236, 255, 1) 51%, rgba(245, 245, 245, 1) 100%);
+  padding-top: 150px;
+}
+
+.last-sections{
+  background-color: #0578FF;
+}
+
+@media only screen and (min-width: 1025px) {
+.three-first-sections {
+  background: linear-gradient(0deg,rgba(245, 245, 245, 1) 0%, rgba(221, 236, 255, 1) 51%, rgba(245, 245, 245, 1) 100%);
+  padding-top: 0px;
+}}

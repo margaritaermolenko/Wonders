@@ -1,0 +1,89 @@
+.FAQs {
+  padding: 0;
+  margin-bottom: 180px;
+}
+.FAQs h2 {
+  font-size: 64px;
+  margin-bottom: 30px;
+}
+.FAQs .faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+}
+.FAQs .faq-header h4 {
+  font-size: 18px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.FAQs .faq-header img {
+  display: block;
+  width: 24px;
+  height: 24x;
+  transition: transform 0.4s ease;
+}
+.FAQs .faq-body {
+  display: none;
+}
+.FAQs .faq-body-opened {
+  display: block;
+}
+.FAQs .faq-body p {
+  font-size: 16px;
+  line-height: 140%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.FAQs .item-opened {
+  transform: rotate(45deg);
+}
+
+.faq-item-wrapper {
+  position: relative;
+  padding: 16px 0;
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  cursor: pointer;
+}
+
+.faq-body {
+  display: none;
+  padding-top: 12px;
+}
+
+.faq-body-opened {
+  display: block;
+}
+
+.faq-line {
+  height: 1px;
+  background-color: black;
+  width: 100%;
+  margin-top: 0;
+}
+
+.faq-item-wrapper:not(.faq-opened) .faq-line {
+  margin-top: 8px;
+}
+
+.faq-item-wrapper.faq-opened .faq-line {
+  margin-top: 16px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .FAQs h2 {
+  margin-top: 100px;
+}
+}
+
+@media only screen and (min-width: 1025px) {
+  .FAQs  {
+  margin-bottom: 280px;
+}
+}
