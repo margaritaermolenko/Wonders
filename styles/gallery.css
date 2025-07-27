@@ -7,7 +7,7 @@
   font-size: 32px;;
 }
 
-.gallery-wrapper, .pictures1-2,.pictures3-4{
+.gallery-wrapper, .pictures1-2,.pictures3-4, .p3-5{
   display: grid;
   gap: 12px;
 }
